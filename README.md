@@ -1,4 +1,4 @@
-## Quranic.ru frontend
+## QuranRead.ru frontend
 
 Using technology:
 
@@ -8,8 +8,8 @@ Using technology:
 ### Installation
 
 ```sh
-$ git clone git@github.com:izbagov/quranic.git
-$ cd quranic
+$ git clone git@github.com:izbagov/quranread.git
+$ cd quranread
 $ npm i
 $ npm start
 ```

@@ -1,10 +1,12 @@
 import React from 'react';
+import LogoIcon from '../../assets/mushaf.svg';
 import s from './Logo.module.scss';
 
 const Logo = () => (
   <div className={s.parent}>
-    <div className={s.logo}>Quranic.ru</div>
-    <div className={s.slogan}>Смысловой перевод Корана</div>
+    <img src={LogoIcon} className={s.mushaf} alt="" />
+    <div className={s.logo}>QuranRead.ru</div>
+    <div className={s.ayat}>Читай во имя твоего Господа [96:1]</div>
   </div>
 );
 
