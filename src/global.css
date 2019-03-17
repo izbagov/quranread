@@ -25,8 +25,8 @@ body {
   margin: 0 auto;
 }
 
-[class^='icon-sura'],
-[class*=' icon-sura'] {
+[class^='icon-chapter'],
+[class*=' icon-chapter'] {
   font-family: sura_names !important;
   speak: none;
   font-style: normal;
@@ -39,458 +39,458 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-sura1:before {
+.icon-chapter1:before {
   content: '\E904';
 }
 
-.icon-sura2:before {
+.icon-chapter2:before {
   content: '\E905';
 }
 
-.icon-sura3:before {
+.icon-chapter3:before {
   content: '\E906';
 }
 
-.icon-sura4:before {
+.icon-chapter4:before {
   content: '\E907';
 }
 
-.icon-sura5:before {
+.icon-chapter5:before {
   content: '\E908';
 }
 
-.icon-sura6:before {
+.icon-chapter6:before {
   content: '\E90b';
 }
 
-.icon-sura7:before {
+.icon-chapter7:before {
   content: '\E90c';
 }
 
-.icon-sura8:before {
+.icon-chapter8:before {
   content: '\E90d';
 }
 
-.icon-sura9:before {
+.icon-chapter9:before {
   content: '\E90e';
 }
 
-.icon-sura10:before {
+.icon-chapter10:before {
   content: '\E90f';
 }
 
-.icon-sura11:before {
+.icon-chapter11:before {
   content: '\E910';
 }
 
-.icon-sura12:before {
+.icon-chapter12:before {
   content: '\E911';
 }
 
-.icon-sura13:before {
+.icon-chapter13:before {
   content: '\E912';
 }
 
-.icon-sura14:before {
+.icon-chapter14:before {
   content: '\E913';
 }
 
-.icon-sura15:before {
+.icon-chapter15:before {
   content: '\E914';
 }
 
-.icon-sura16:before {
+.icon-chapter16:before {
   content: '\E915';
 }
 
-.icon-sura17:before {
+.icon-chapter17:before {
   content: '\E916';
 }
 
-.icon-sura18:before {
+.icon-chapter18:before {
   content: '\E917';
 }
 
-.icon-sura19:before {
+.icon-chapter19:before {
   content: '\E918';
 }
 
-.icon-sura20:before {
+.icon-chapter20:before {
   content: '\E919';
 }
 
-.icon-sura21:before {
+.icon-chapter21:before {
   content: '\E91a';
 }
 
-.icon-sura22:before {
+.icon-chapter22:before {
   content: '\E91b';
 }
 
-.icon-sura23:before {
+.icon-chapter23:before {
   content: '\E91c';
 }
 
-.icon-sura24:before {
+.icon-chapter24:before {
   content: '\E91d';
 }
 
-.icon-sura25:before {
+.icon-chapter25:before {
   content: '\E91e';
 }
 
-.icon-sura26:before {
+.icon-chapter26:before {
   content: '\E91f';
 }
 
-.icon-sura27:before {
+.icon-chapter27:before {
   content: '\E920';
 }
 
-.icon-sura28:before {
+.icon-chapter28:before {
   content: '\E921';
 }
 
-.icon-sura29:before {
+.icon-chapter29:before {
   content: '\E922';
 }
 
-.icon-sura30:before {
+.icon-chapter30:before {
   content: '\E923';
 }
 
-.icon-sura31:before {
+.icon-chapter31:before {
   content: '\E924';
 }
 
-.icon-sura32:before {
+.icon-chapter32:before {
   content: '\E925';
 }
 
-.icon-sura33:before {
+.icon-chapter33:before {
   content: '\E926';
 }
 
-.icon-sura34:before {
+.icon-chapter34:before {
   content: '\E92e';
 }
 
-.icon-sura35:before {
+.icon-chapter35:before {
   content: '\E92f';
 }
 
-.icon-sura36:before {
+.icon-chapter36:before {
   content: '\E930';
 }
 
-.icon-sura37:before {
+.icon-chapter37:before {
   content: '\E931';
 }
 
-.icon-sura38:before {
+.icon-chapter38:before {
   content: '\E909';
 }
 
-.icon-sura39:before {
+.icon-chapter39:before {
   content: '\E90a';
 }
 
-.icon-sura40:before {
+.icon-chapter40:before {
   content: '\E927';
 }
 
-.icon-sura41:before {
+.icon-chapter41:before {
   content: '\E928';
 }
 
-.icon-sura42:before {
+.icon-chapter42:before {
   content: '\E929';
 }
 
-.icon-sura43:before {
+.icon-chapter43:before {
   content: '\E92a';
 }
 
-.icon-sura44:before {
+.icon-chapter44:before {
   content: '\E92b';
 }
 
-.icon-sura45:before {
+.icon-chapter45:before {
   content: '\E92c';
 }
 
-.icon-sura46:before {
+.icon-chapter46:before {
   content: '\E92d';
 }
 
-.icon-sura47:before {
+.icon-chapter47:before {
   content: '\E932';
 }
 
-.icon-sura48:before {
+.icon-chapter48:before {
   content: '\E902';
 }
 
-.icon-sura49:before {
+.icon-chapter49:before {
   content: '\E933';
 }
 
-.icon-sura50:before {
+.icon-chapter50:before {
   content: '\E934';
 }
 
-.icon-sura51:before {
+.icon-chapter51:before {
   content: '\E935';
 }
 
-.icon-sura52:before {
+.icon-chapter52:before {
   content: '\E936';
 }
 
-.icon-sura53:before {
+.icon-chapter53:before {
   content: '\E937';
 }
 
-.icon-sura54:before {
+.icon-chapter54:before {
   content: '\E938';
 }
 
-.icon-sura55:before {
+.icon-chapter55:before {
   content: '\E939';
 }
 
-.icon-sura56:before {
+.icon-chapter56:before {
   content: '\E93a';
 }
 
-.icon-sura57:before {
+.icon-chapter57:before {
   content: '\E93b';
 }
 
-.icon-sura58:before {
+.icon-chapter58:before {
   content: '\E93c';
 }
 
-.icon-sura59:before {
+.icon-chapter59:before {
   content: '\E900';
 }
 
-.icon-sura60:before {
+.icon-chapter60:before {
   content: '\E901';
 }
 
-.icon-sura61:before {
+.icon-chapter61:before {
   content: '\E941';
 }
 
-.icon-sura62:before {
+.icon-chapter62:before {
   content: '\E942';
 }
 
-.icon-sura63:before {
+.icon-chapter63:before {
   content: '\E943';
 }
 
-.icon-sura64:before {
+.icon-chapter64:before {
   content: '\E944';
 }
 
-.icon-sura65:before {
+.icon-chapter65:before {
   content: '\E945';
 }
 
-.icon-sura66:before {
+.icon-chapter66:before {
   content: '\E946';
 }
 
-.icon-sura67:before {
+.icon-chapter67:before {
   content: '\E947';
 }
 
-.icon-sura68:before {
+.icon-chapter68:before {
   content: '\E948';
 }
 
-.icon-sura69:before {
+.icon-chapter69:before {
   content: '\E949';
 }
 
-.icon-sura70:before {
+.icon-chapter70:before {
   content: '\E94a';
 }
 
-.icon-sura71:before {
+.icon-chapter71:before {
   content: '\E94b';
 }
 
-.icon-sura72:before {
+.icon-chapter72:before {
   content: '\E94c';
 }
 
-.icon-sura73:before {
+.icon-chapter73:before {
   content: '\E94d';
 }
 
-.icon-sura74:before {
+.icon-chapter74:before {
   content: '\E94e';
 }
 
-.icon-sura75:before {
+.icon-chapter75:before {
   content: '\E94f';
 }
 
-.icon-sura76:before {
+.icon-chapter76:before {
   content: '\E950';
 }
 
-.icon-sura77:before {
+.icon-chapter77:before {
   content: '\E951';
 }
 
-.icon-sura78:before {
+.icon-chapter78:before {
   content: '\E952';
 }
 
-.icon-sura79:before {
+.icon-chapter79:before {
   content: '\E93d';
 }
 
-.icon-sura80:before {
+.icon-chapter80:before {
   content: '\E93e';
 }
 
-.icon-sura81:before {
+.icon-chapter81:before {
   content: '\E93f';
 }
 
-.icon-sura82:before {
+.icon-chapter82:before {
   content: '\E940';
 }
 
-.icon-sura83:before {
+.icon-chapter83:before {
   content: '\E953';
 }
 
-.icon-sura84:before {
+.icon-chapter84:before {
   content: '\E954';
 }
 
-.icon-sura85:before {
+.icon-chapter85:before {
   content: '\E955';
 }
 
-.icon-sura86:before {
+.icon-chapter86:before {
   content: '\E956';
 }
 
-.icon-sura87:before {
+.icon-chapter87:before {
   content: '\E957';
 }
 
-.icon-sura88:before {
+.icon-chapter88:before {
   content: '\E958';
 }
 
-.icon-sura89:before {
+.icon-chapter89:before {
   content: '\E959';
 }
 
-.icon-sura90:before {
+.icon-chapter90:before {
   content: '\E95a';
 }
 
-.icon-sura91:before {
+.icon-chapter91:before {
   content: '\E95b';
 }
 
-.icon-sura92:before {
+.icon-chapter92:before {
   content: '\E95c';
 }
 
-.icon-sura93:before {
+.icon-chapter93:before {
   content: '\E95d';
 }
 
-.icon-sura94:before {
+.icon-chapter94:before {
   content: '\E95e';
 }
 
-.icon-sura95:before {
+.icon-chapter95:before {
   content: '\E95f';
 }
 
-.icon-sura96:before {
+.icon-chapter96:before {
   content: '\E960';
 }
 
-.icon-sura97:before {
+.icon-chapter97:before {
   content: '\E961';
 }
 
-.icon-sura98:before {
+.icon-chapter98:before {
   content: '\E962';
 }
 
-.icon-sura99:before {
+.icon-chapter99:before {
   content: '\E963';
 }
 
-.icon-sura100:before {
+.icon-chapter100:before {
   content: '\E964';
 }
 
-.icon-sura101:before {
+.icon-chapter101:before {
   content: '\E965';
 }
 
-.icon-sura102:before {
+.icon-chapter102:before {
   content: '\E966';
 }
 
-.icon-sura103:before {
+.icon-chapter103:before {
   content: '\E967';
 }
 
-.icon-sura104:before {
+.icon-chapter104:before {
   content: '\E968';
 }
 
-.icon-sura105:before {
+.icon-chapter105:before {
   content: '\E969';
 }
 
-.icon-sura106:before {
+.icon-chapter106:before {
   content: '\E96a';
 }
 
-.icon-sura107:before {
+.icon-chapter107:before {
   content: '\E96b';
 }
 
-.icon-sura108:before {
+.icon-chapter108:before {
   content: '\E96c';
 }
 
-.icon-sura109:before {
+.icon-chapter109:before {
   content: '\E96d';
 }
 
-.icon-sura110:before {
+.icon-chapter110:before {
   content: '\E96e';
 }
 
-.icon-sura111:before {
+.icon-chapter111:before {
   content: '\E96f';
 }
 
-.icon-sura112:before {
+.icon-chapter112:before {
   content: '\E970';
 }
 
-.icon-sura113:before {
+.icon-chapter113:before {
   content: '\E971';
 }
 
-.icon-sura114:before {
+.icon-chapter114:before {
   content: '\E972';
 }

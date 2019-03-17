@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import s from './Sura.module.scss';
+import s from './Chapter.module.scss';
 
-const Sura = item => {
+const Chapter = item => {
   const { name, translit } = item.text;
   return (
     <Link to={`/${item.id}`} className={s.container}>
@@ -12,10 +12,10 @@ const Sura = item => {
           <div className={s.name}>{name}</div>
           <div className={s.translit}>{translit}</div>
         </div>
-        <div className={`icon-sura${item.id}`} />
+        <div className={`icon-chapter${item.id}`} />
       </div>
     </Link>
   );
 };
 
-export default Sura;
+export default Chapter;
