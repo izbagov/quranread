@@ -3,6 +3,8 @@
   max-width: 16.6666667%;
   display: flex;
   cursor: pointer;
+  text-decoration: none;
+  color: #222;
 
   &:nth-child(odd) {
     & .box {

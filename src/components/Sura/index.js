@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import s from './Sura.module.scss';
 
 const Sura = item => {
   const { name, translit } = item.text;
   return (
-    <div className={s.container} onClick={() => alert('not implemented')}>
+    <Link to={`/${item.id}`} className={s.container}>
       <div className={s.box}>
         <div className={s.number}>{item.id}</div>
         <div className={s.info}>
@@ -13,7 +14,7 @@ const Sura = item => {
         </div>
         <div className={`icon-sura${item.id}`} />
       </div>
-    </div>
+    </Link>
   );
 };
 

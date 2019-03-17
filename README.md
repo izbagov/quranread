@@ -3,6 +3,7 @@
 Using technology:
 
 - React
+- Router
 - CSS modules with Sass
 
 ### Installation
