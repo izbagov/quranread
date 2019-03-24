@@ -35,4 +35,8 @@
   justify-content: center;
   align-items: center;
   background: #fff;
+
+  @media (max-width: 960px) {
+    left: -20px;
+  }
 }

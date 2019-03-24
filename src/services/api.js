@@ -19,7 +19,6 @@ export default class ApiServices {
     const chapter = await this.getData(
       `/chapters/${id}/verses?offset=${offset}&limit=10&translations=45&language=ru`
     );
-    console.log('OFFSET FROM API SERVICE', offset);
     return chapter;
   };
 }

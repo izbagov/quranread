@@ -28,6 +28,33 @@ body {
 .wrap {
   width: 1170px;
   margin: 0 auto;
+
+  @media (max-width: 1170px) {
+    width: auto;
+    margin: 0;
+    padding: 0 20px;
+  }
+}
+
+.page {
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+
+  & p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  & a {
+    color: #03a9f4;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 [class^='icon-chapter'],

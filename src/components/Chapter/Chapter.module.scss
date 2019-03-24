@@ -17,6 +17,26 @@
       background: #fffbd9;
     }
   }
+
+  @media (max-width: 1600px) {
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+
+  @media (max-width: 960px) {
+    flex-basis: 33.33333%;
+    max-width: 33.33333%;
+  }
+
+  @media (max-width: 768px) {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  @media (max-width: 571px) {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 }
 
 .box {
@@ -32,6 +52,10 @@
   font-size: 24px;
   flex: 0 0 50px;
   margin-right: 10px;
+
+  @media (max-width: 1170px) {
+    margin-right: 0;
+  }
 }
 
 .info {
