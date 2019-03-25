@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import s from './Footer.module.scss';
 
 const Footer = () => (
   <footer className={s.footer}>
     <div className={`wrap ${s.wrap}`}>
       <div className={s.left}>
-        &copy; 2018 - <a href="/">QuranRead.ru</a> - Смысловой перевод Священного Корана
+        &copy; 2018 - <Link to="/">QuranRead.ru</Link> - Смысловой перевод Священного Корана
       </div>
       <div className={s.nav}>
-        <a href="/contacts">Обратная связь</a>
+        <Link to="/contacts">Обратная связь</Link>
       </div>
     </div>
   </footer>

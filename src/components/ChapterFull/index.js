@@ -2,6 +2,7 @@ import React from 'react';
 import ApiServices from '../../services/api';
 import Chapters from '../../data/chapters';
 import Verse from '../Verse';
+import WindowHelper from './window.helper';
 import s from './ChapterFull.module.scss';
 
 const Api = new ApiServices();
@@ -21,8 +22,8 @@ class ChapterFull extends React.Component {
     const { totalPages, currentPage, offset, loading } = this.state;
     if (totalPages === currentPage || loading) return;
     if (
-      window.innerHeight + document.documentElement.scrollTop >=
-      document.body.offsetHeight - 50
+      WindowHelper.pageHeight() - 80 <=
+      WindowHelper.windowHeight() + WindowHelper.scrollPosition()
     ) {
       this.setState({ loading: true });
       Api.getChapterWithOffset(this.chapterId, offset).then(({ meta, verses }) => {
