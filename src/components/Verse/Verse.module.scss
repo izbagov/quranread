@@ -22,7 +22,6 @@
   flex-wrap: wrap;
 
   @media (max-width: 580px) {
-    font-size: 40px;
     line-height: 130%;
   }
 }
@@ -47,11 +46,11 @@
 }
 
 .activeWord {
-  color: #03a9f4;
+  color: #03a9f4 !important;
 
-  &:hover {
-    color: #03a9f4;
-  }
+  // &:hover {
+  //   color: #03a9f4;
+  // }
 }
 
 .translation {
