@@ -1,0 +1,12 @@
+.container {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+}

@@ -46,6 +46,10 @@
   font-size: 60px;
   color: #000;
   padding: 25px 0;
+
+  @media (max-width: 580px) {
+    font-size: 36px;
+  }
 }
 
 body {

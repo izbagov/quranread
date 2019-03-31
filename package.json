@@ -2,7 +2,7 @@
   "name": "quranread",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://quranread.ru/",
+  "homepage": "https://quranread.ru/",
   "dependencies": {
     "axios": "^0.18.0",
     "node-sass": "^4.11.0",
@@ -16,12 +16,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "now-build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "https://ru.quranacademy.org/quran/js-api",
   "browserslist": [
     ">0.2%",
     "not dead",

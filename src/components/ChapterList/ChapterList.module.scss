@@ -2,3 +2,35 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.containerSmall {
+  display: flex;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.simple {
+  background: #fff;
+  max-height: 50vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.simpleId {
+  flex: 0 0 40px;
+  max-width: 40px;
+}
+
+.simpleNameContainer {
+  flex: 1;
+}
+
+.simpleName {
+  font-size: 14px;
+}
+
+.simpleTranslit {
+  font-size: 11px;
+  color: #aaa;
+}
