@@ -10,10 +10,30 @@
 
 .arabic {
   direction: rtl;
-  font-size: 30px;
+  font-size: 46px;
   margin-bottom: 10px;
-  line-height: 52px;
-  font-family: me_quran, 'Times New Roman';
+  white-space: pre-line;
+  color: #000;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  word-break: break-all;
+  text-align: right;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: 580px) {
+    font-size: 40px;
+    line-height: 130%;
+  }
+}
+
+.word {
+  padding: 0 2px;
+  cursor: pointer;
+
+  &:hover {
+    color: #03a9f4;
+  }
 }
 
 .translation {

@@ -9,6 +9,7 @@ const Footer = () => (
         &copy; 2018 - <Link to="/">QuranRead.ru</Link> - Смысловой перевод Священного Корана
       </div>
       <div className={s.nav}>
+        <Link to="/credits">Благодарность</Link>
         <Link to="/contacts">Обратная связь</Link>
       </div>
     </div>
