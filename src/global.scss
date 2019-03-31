@@ -30,6 +30,24 @@
   }
 }
 
+@font-face {
+  font-family: 'bismillah';
+  src: url('/assets/fonts/bismillah/bismillah.eot?yg3f94');
+  src: url('/assets/fonts/bismillah/bismillah.eot?yg3f94#iefix') format('embedded-opentype'),
+    url('/assets/fonts/bismillah/bismillah.ttf?yg3f94') format('truetype'),
+    url('/assets/fonts/bismillah/bismillah.woff?yg3f94') format('woff'),
+    url('/assets/fonts/bismillah/bismillah.svg?yg3f94#bismillah') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#bismillah {
+  font-family: 'bismillah';
+  font-size: 60px;
+  color: #000;
+  padding: 25px 0;
+}
+
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, Helvetica, 'Roboto', 'Segoe UI',
     'Helvetica Neue', Arial, sans-serif;

@@ -2,6 +2,7 @@ import React from 'react';
 import ApiServices from '../../services/api';
 import Chapters from '../../data/chapters';
 import Verse from '../Verse';
+import Bismillah from '../../UI/Bismillah';
 import WindowHelper from './window.helper';
 import s from './ChapterFull.module.scss';
 
@@ -63,6 +64,7 @@ class ChapterFull extends React.Component {
     return (
       <div className="wrap">
         <div className={s.title}>{Chapters[this.chapterId - 1].text.name}</div>
+        <Bismillah chapter={this.chapterId} />
         {items.map(verse => (
           <Verse key={verse.id} {...verse} />
         ))}
