@@ -22,10 +22,7 @@ class ChapterFull extends React.Component {
   onScroll = () => {
     const { totalPages, currentPage, offset, loading } = this.state;
     if (totalPages === currentPage || loading) return;
-    if (
-      WindowHelper.pageHeight() - 80 <=
-      WindowHelper.windowHeight() + WindowHelper.scrollPosition()
-    ) {
+    if (WindowHelper.pageHeight() <= WindowHelper.windowHeight() + WindowHelper.scrollPosition()) {
       this.setState({ loading: true });
       Api.getChapterWithOffset(this.chapterId, offset).then(({ meta, verses }) => {
         this.setState(state => ({

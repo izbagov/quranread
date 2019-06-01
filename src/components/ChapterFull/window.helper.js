@@ -1,6 +1,6 @@
 class WindowHelper {
   static pageHeight() {
-    return document.documentElement.offsetHeight;
+    return document.documentElement.offsetHeight - 600;
   }
 
   static windowHeight() {
