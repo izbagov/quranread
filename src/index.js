@@ -5,7 +5,7 @@ import Application from './router';
 
 import './global.scss';
 
-ReactDOM.render(<Application />, document.getElementById('root'));
+render(<Application />, document.getElementById('root'));
 
 // SEO
 
