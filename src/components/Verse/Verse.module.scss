@@ -77,3 +77,28 @@
     left: -20px;
   }
 }
+
+.playAyat {
+  position: absolute;
+  left: -18px;
+  top: 55px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #03a9f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #1db9ff;
+  }
+
+  & svg {
+    width: 11px;
+    height: 11px;
+    fill: #fff;
+  }
+}
