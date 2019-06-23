@@ -5,8 +5,8 @@ const Verse = verse => {
   const [clicked, setClicked] = useState(null);
   // const [wordActive, setClicked] = useState(null);
   const wordPlayAudio = (wordAudio, id) => {
-    setClicked(id);
     if (wordAudio) {
+      setClicked(id);
       const audio = new Audio(wordAudio);
       audio.play();
       audio.addEventListener('ended', () => setClicked(null));
