@@ -15,9 +15,16 @@ export default class ApiServices {
     return chapter;
   };
 
+  getChapterVerse = async (id, offset) => {
+    const chapter = await this.getData(
+      `/chapters/${id}/verses?offset=${offset - 1}&limit=1&translations=45&language=ru`
+    );
+    return chapter;
+  };
+
   getChapterWithOffset = async (id, offset) => {
     const chapter = await this.getData(
-      `/chapters/${id}/verses?offset=${offset}&limit=10&translations=45&language=ru`
+      `/chapters/${id}/verses?offset=${offset}&limit=12&translations=45&language=ru`
     );
     return chapter;
   };

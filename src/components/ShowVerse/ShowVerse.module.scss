@@ -1,0 +1,39 @@
+.alert {
+  position: relative;
+  padding: 15px 15px 15px 64px;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.5715;
+  border-radius: 2px;
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+
+  & a {
+    text-decoration: none;
+    color: #009eff;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.icon {
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  font-size: 24px;
+  color: #1890ff;
+}
+
+.title {
+  display: block;
+  margin-bottom: 4px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 22px;
+}
