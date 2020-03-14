@@ -3,16 +3,33 @@ import s from './Verse.module.scss';
 import { ReactComponent as IconPlay } from '../../assets/play.svg';
 import { ReactComponent as IconPause } from '../../assets/pause.svg';
 
-const Verse = verse => {
-  const [clickedWord, setClickedWord] = useState(null);
+const Verse = ({
+  verse,
+  currentAudio,
+  setCurrentAudio,
+  wordAudio,
+  setWordAudio,
+  activeWord,
+  setActiveWord
+}) => {
+  // console.log('verse', verse);
   const [play, setPlay] = useState(false);
 
   const wordPlayAudio = (wordAudio, id) => {
-    if (wordAudio && !clickedWord) {
-      setClickedWord(id);
+    if (wordAudio) {
+      if (currentAudio) {
+        currentAudio.pause();
+        setActiveWord(null);
+      }
+
+      setActiveWord(id);
       const audio = new Audio(wordAudio);
+      setCurrentAudio(audio);
       audio.play();
-      audio.addEventListener('ended', () => setClickedWord(null));
+      audio.addEventListener('ended', () => {
+        setCurrentAudio(null);
+        setActiveWord(null);
+      });
     }
   };
 
@@ -20,7 +37,8 @@ const Verse = verse => {
     setPlay(!play);
   };
 
-  console.log(verse);
+  const verseClasses = word =>
+    `${word.class_name} ${word.char_type} ${s.word} ${activeWord === word.id ? s.activeWord : ''}`;
 
   return (
     <div className={s.container}>
@@ -29,9 +47,7 @@ const Verse = verse => {
         {verse.words.map(word => (
           <div
             key={word.id}
-            className={`${word.class_name} ${word.char_type} ${s.word} ${
-              clickedWord ? s.active : ''
-            } ${clickedWord === word.id ? s.activeWord : ''}`}
+            className={verseClasses(word)}
             dangerouslySetInnerHTML={{ __html: word.code }}
             onClick={() => wordPlayAudio(word.audio.url, word.id)}
           />
