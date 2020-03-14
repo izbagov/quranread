@@ -8,6 +8,14 @@
   }
 }
 
+.activeContainer {
+  background: #eefaff;
+
+  &:nth-child(even) {
+    background: #eefaff;
+  }
+}
+
 .arabic {
   direction: rtl;
   font-size: 46px;
@@ -66,16 +74,16 @@
   background: #fff;
 
   @media (max-width: 960px) {
-    left: -20px;
+    left: -16px;
   }
 }
 
 .playAyat {
   position: absolute;
-  left: -18px;
+  left: -24px;
   top: 55px;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #03a9f4;
   display: flex;
@@ -85,13 +93,17 @@
   transition: all 0.3s;
   user-select: none;
 
+  @media (max-width: 960px) {
+    left: -11px;
+  }
+
   &:hover {
     background: #1db9ff;
   }
 
   & svg {
-    width: 11px;
-    height: 11px;
+    width: 12px;
+    height: 12px;
     fill: #fff;
   }
 }

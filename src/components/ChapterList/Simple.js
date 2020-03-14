@@ -4,8 +4,6 @@ import chapters from '../../data/chapters';
 import s from './ChapterList.module.scss';
 
 const ChapterListSimple = props => {
-  console.log(props);
-
   return (
     <div className={s.simple}>
       {chapters.map(chapter => (

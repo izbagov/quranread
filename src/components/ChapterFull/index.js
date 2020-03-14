@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import ApiServices from '../../services/api';
 import Chapters from '../../data/chapters';
 import Verse from '../Verse';
 import Bismillah from '../../UI/Bismillah';
-import WindowHelper from './window.helper';
 import s from './ChapterFull.module.scss';
 
 const Api = new ApiServices();
 
 const ChapterFull = props => {
   const [loading, setLoading] = useState(false);
+  const [ref, inView, entry] = useInView({ rootMargin: '500px' });
   const [items, setItems] = useState([]);
   const [offset, setOffset] = useState(10);
   const [totalPages, setTotalPages] = useState(null);
@@ -18,14 +19,13 @@ const ChapterFull = props => {
   const [wordAudio, setWordAudio] = useState(null);
   const [activeAudio, setActiveAudio] = useState(null);
 
-  let mounted;
   const chapterId = props.match.params.id;
 
-  const handleScroll = () => {
+  useEffect(() => {
     if (totalPages === currentPage || loading) return;
-    if (WindowHelper.pageHeight() <= WindowHelper.windowHeight() + WindowHelper.scrollPosition()) {
+    if (inView && entry.boundingClientRect.top > 500) {
+      console.log('load');
       setLoading(true);
-
       Api.getChapterWithOffset(chapterId, offset).then(({ meta, verses }) => {
         setLoading(false);
         setCurrentPage(meta.current_page);
@@ -33,25 +33,16 @@ const ChapterFull = props => {
         setItems(items => [...items, ...verses]);
       });
     }
-  };
+  }, [inView]);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, false);
-    mounted = true;
     setLoading(true);
     Api.getChapter(chapterId).then(({ meta, verses }) => {
-      if (mounted) {
-        setLoading(false);
-        setCurrentPage(meta.current_page);
-        setTotalPages(meta.total_pages);
-        setItems(verses);
-      }
+      setLoading(false);
+      setCurrentPage(meta.current_page);
+      setTotalPages(meta.total_pages);
+      setItems(verses);
     });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll, false);
-      mounted = false;
-    };
   }, []);
 
   return (
@@ -70,7 +61,8 @@ const ChapterFull = props => {
           setActiveAudio={setActiveAudio}
         />
       ))}
-      {loading && <div>Загружаю информацию..</div>}
+      {loading && <div>Загружаю суру..</div>}
+      <div ref={ref} style={{ height: 50 }} />
     </div>
   );
 };

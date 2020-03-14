@@ -10,7 +10,7 @@ import Header from './UI/Header';
 
 const Application = () => (
   <Router>
-    <div>
+    <>
       <Header />
 
       <Route exact path="/" component={Home} />
@@ -20,7 +20,7 @@ const Application = () => (
       <Route exact path="/credits" component={Credits} />
 
       <Footer />
-    </div>
+    </>
   </Router>
 );
 

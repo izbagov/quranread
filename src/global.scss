@@ -52,9 +52,19 @@
   }
 }
 
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, Helvetica, 'Roboto', 'Segoe UI',
     'Helvetica Neue', Arial, sans-serif;
+}
+
+#root {
+  height: 100%;
 }
 
 blockquote {

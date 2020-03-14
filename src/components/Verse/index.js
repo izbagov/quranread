@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import s from './Verse.module.scss';
 import { ReactComponent as IconPlay } from '../../assets/play.svg';
 import { ReactComponent as IconPause } from '../../assets/pause.svg';
@@ -14,8 +14,6 @@ const Verse = ({
   activeAudio,
   setActiveAudio
 }) => {
-  console.log('verse', verse);
-
   const wordPlayAudio = (wordAudio, id) => {
     if (wordAudio) {
       playAudio(wordAudio, currentAudio, setActiveAudio, setCurrentAudio, id);
@@ -44,7 +42,7 @@ const Verse = ({
     `${word.class_name} ${word.char_type} ${s.word} ${activeAudio === word.id ? s.activeWord : ''}`;
 
   return (
-    <div className={s.container}>
+    <div className={`${s.container} ${verse.verse_key === activeAudio ? s.activeContainer : ''}`}>
       <div className={s.number}>{verse.verse_number}</div>
       <div className={s.arabic}>
         {verse.words.map(word => (
