@@ -16,7 +16,7 @@ const ChapterFull = props => {
   const [currentPage, setCurrentPage] = useState(null);
   const [currentAudio, setCurrentAudio] = useState(null);
   const [wordAudio, setWordAudio] = useState(null);
-  const [activeWord, setActiveWord] = useState(null);
+  const [activeAudio, setActiveAudio] = useState(null);
 
   let mounted;
   const chapterId = props.match.params.id;
@@ -66,8 +66,8 @@ const ChapterFull = props => {
           setCurrentAudio={setCurrentAudio}
           wordAudio={wordAudio}
           setWordAudio={setWordAudio}
-          activeWord={activeWord}
-          setActiveWord={setActiveWord}
+          activeAudio={activeAudio}
+          setActiveAudio={setActiveAudio}
         />
       ))}
       {loading && <div>Загружаю информацию..</div>}
