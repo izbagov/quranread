@@ -18,6 +18,10 @@
     { "src": "/asset-manifest.json", "dest": "/asset-manifest.json" },
     { "src": "/manifest.json", "dest": "/manifest.json" },
     { "src": "/styles.css", "dest": "/styles.css" },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
     { "src": "/precache-manifest.(.*)", "dest": "/precache-manifest.$1" },
     {
       "src": "/service-worker.js",
