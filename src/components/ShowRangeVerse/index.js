@@ -20,7 +20,7 @@ const ShowRangeVerse = ({ match }) => {
   const [activeAudio, setActiveAudio] = useState(null);
   const Api = new ApiServices();
   const { verseFirst, verseSecond, id } = match.params;
-  const limit = verseSecond - verseFirst;
+  const limit = verseSecond - verseFirst + 1;
 
   const fetchVersesRange = async () => {
     setLoading(true);
