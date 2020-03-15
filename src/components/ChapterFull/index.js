@@ -4,6 +4,7 @@ import ApiServices from '../../services/api';
 import Chapters from '../../data/chapters';
 import Verse from '../Verse';
 import Bismillah from '../../UI/Bismillah';
+import { generateTitle } from '../../helpers';
 import s from './ChapterFull.module.scss';
 
 const Api = new ApiServices();
@@ -42,6 +43,7 @@ const ChapterFull = props => {
       setTotalPages(meta.total_pages);
       setItems(verses);
     });
+    document.title = generateTitle(chapterId);
   }, []);
 
   return (

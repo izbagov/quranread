@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import ApiServices from '../../services/api';
 import Chapters from '../../data/chapters';
 import Verse from '../Verse';
-import { getRandomSuraNumber } from '../../helpers';
+import { getRandomSuraNumber, generateTitle } from '../../helpers';
 
 const ShowRangeVerse = ({ match }) => {
   const [verses, setVerses] = useState([]);
@@ -55,6 +55,7 @@ const ShowRangeVerse = ({ match }) => {
 
   useEffect(() => {
     fetchVersesRange();
+    document.title = generateTitle(id, verseFirst, verseSecond);
   }, [verseFirst, verseSecond, id]);
   return (
     <div className="wrap">

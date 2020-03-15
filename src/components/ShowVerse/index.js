@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ApiServices from '../../services/api';
 import Verse from '../Verse';
 import Chapters from '../../data/chapters';
+import { generateTitle } from '../../helpers';
 import s from './ShowVerse.module.scss';
 
 const ShowVerse = ({ match }) => {
@@ -31,6 +32,7 @@ const ShowVerse = ({ match }) => {
 
   useEffect(() => {
     fetchChapterVerse(chapterId, verseId);
+    document.title = generateTitle(chapterId, verseId);
   }, [chapterId, verseId]);
   return (
     <div className="wrap">
