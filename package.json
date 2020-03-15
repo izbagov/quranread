@@ -5,6 +5,7 @@
   "homepage": "https://quranread.ru/",
   "dependencies": {
     "axios": "^0.18.0",
+    "intersection-observer": "^0.7.0",
     "node-sass": "4.13.1",
     "react": "16.13.0",
     "react-dom": "16.13.0",

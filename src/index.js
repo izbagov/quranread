@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 import 'whatwg-fetch';
+import 'intersection-observer';
 import App from './App';
-// import AppProduction from './AppProduction';
 
 render(<App />, document.getElementById('root'));
 
