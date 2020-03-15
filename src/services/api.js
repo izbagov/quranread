@@ -15,6 +15,13 @@ export default class ApiServices {
     return chapter;
   };
 
+  getVersesRange = async (id, offset, limit) => {
+    const chapter = await this.getData(
+      `/chapters/${id}/verses?offset=${offset - 1}&limit=${limit}&translations=45&language=ru`
+    );
+    return chapter;
+  };
+
   getChapterVerse = async (id, offset) => {
     const chapter = await this.getData(
       `/chapters/${id}/verses?offset=${offset - 1}&limit=1&translations=45&language=ru`

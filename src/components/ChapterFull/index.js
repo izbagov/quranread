@@ -24,7 +24,6 @@ const ChapterFull = props => {
   useEffect(() => {
     if (totalPages === currentPage || loading) return;
     if (inView && entry.boundingClientRect.top > 500) {
-      console.log('load');
       setLoading(true);
       Api.getChapterWithOffset(chapterId, offset).then(({ meta, verses }) => {
         setLoading(false);
@@ -46,7 +45,7 @@ const ChapterFull = props => {
   }, []);
 
   return (
-    <div className="wrap">
+    <div className="wrap relative">
       <div className={s.title}>{Chapters[chapterId - 1].text.name}</div>
       <Bismillah chapter={chapterId} />
       {items.map(verse => (
@@ -62,7 +61,7 @@ const ChapterFull = props => {
         />
       ))}
       {loading && <div>Загружаю суру..</div>}
-      <div ref={ref} style={{ height: 50 }} />
+      <div ref={ref} className="loadmore" />
     </div>
   );
 };

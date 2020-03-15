@@ -14,6 +14,11 @@ export const playAudio = (wordAudio, currentAudio, setActiveAudio, setCurrentAud
   });
 };
 
+export function getRandomSuraNumber() {
+  return Math.ceil(0 + Math.random() * (114 - 0));
+}
+
 export default {
-  playAudio
+  playAudio,
+  getRandomSuraNumber
 };

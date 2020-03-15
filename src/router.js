@@ -5,6 +5,7 @@ import ChapterFull from './components/ChapterFull';
 import Contacts from './components/Contacts';
 import Credits from './components/Credits';
 import ShowVerse from './components/ShowVerse';
+import ShowRangeVerse from './components/ShowRangeVerse';
 import Footer from './UI/Footer';
 import Header from './UI/Header';
 
@@ -16,6 +17,7 @@ const Application = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/:id(\d+)" component={ChapterFull} />
       <Route exact path="/:id(\d+)/:verse(\d+)" component={ShowVerse} />
+      <Route exact path="/:id(\d+)/:verseFirst(\d+)-:verseSecond(\d+)" component={ShowRangeVerse} />
       <Route exact path="/contacts" component={Contacts} />
       <Route exact path="/credits" component={Credits} />
 

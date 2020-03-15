@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ApiServices from '../../services/api';
 import Verse from '../Verse';
+import Chapters from '../../data/chapters';
 import s from './ShowVerse.module.scss';
 
 const ShowVerse = ({ match }) => {
@@ -33,6 +34,7 @@ const ShowVerse = ({ match }) => {
   }, [chapterId, verseId]);
   return (
     <div className="wrap">
+      <div className="title">{Chapters[chapterId - 1].text.name}</div>
       {verses.map(verse => (
         <Verse
           key={verse.id}
