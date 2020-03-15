@@ -16,8 +16,7 @@
     },
     { "src": "/favicon.ico", "dest": "/favicon.ico" },
     { "src": "/asset-manifest.json", "dest": "/asset-manifest.json" },
-    { "src": "/manifest.json", "dest": "/manifest.json" },
-    { "src": "/styles.css", "dest": "/styles.css" },
+    { "src": "/site.webmanifest", "dest": "/site.webmanifest" },
     {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
