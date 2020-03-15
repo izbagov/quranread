@@ -5,7 +5,7 @@
   "homepage": "https://quranread.ru/",
   "dependencies": {
     "axios": "^0.18.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "4.13.1",
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-infinite-scroller": "^1.2.4",
@@ -33,5 +33,8 @@
   ],
   "devDependencies": {
     "react-snap": "^1.23.0"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
