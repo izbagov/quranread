@@ -1,11 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
 import 'whatwg-fetch';
-import Application from './router';
+import App from './App';
+// import AppProduction from './AppProduction';
 
-import './global.scss';
-
-render(<Application />, document.getElementById('root'));
+render(<App />, document.getElementById('root'));
 
 // SEO
 
