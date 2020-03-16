@@ -21,19 +21,21 @@ export function getRandomSuraNumber() {
 }
 
 export function generateTitle(chapterId, first, last) {
-  let title = '';
+  if (chapterId <= 114) {
+    let title = '';
 
-  if (first) {
-    title = `${first} аят`;
+    if (first) {
+      title = `${first} аят`;
+    }
+
+    if (last) {
+      title = `с ${first} по ${last} аят`;
+    }
+
+    return `Сура ${chapters[chapterId - 1].text.translit} (${
+      chapters[chapterId - 1].text.name
+    }) ${title} - Quran Read`;
   }
-
-  if (last) {
-    title = `с ${first} по ${last} аят`;
-  }
-
-  return `Сура ${chapters[chapterId - 1].text.translit} (${
-    chapters[chapterId - 1].text.name
-  }) ${title} - Quran Read`;
 }
 
 export default {

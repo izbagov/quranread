@@ -4,14 +4,16 @@ import ApiServices from '../../services/api';
 import Chapters from '../../data/chapters';
 import Verse from '../Verse';
 import Bismillah from '../../UI/Bismillah';
+import Alert from '../../UI/Alert';
+import RandomSura from '../RandomSura';
 import { generateTitle } from '../../helpers';
 import s from './ChapterFull.module.scss';
 
 const Api = new ApiServices();
 
 const ChapterFull = props => {
-  const [loading, setLoading] = useState(false);
-  const [ref, inView, entry] = useInView({ rootMargin: '500px' });
+  const [loading, setLoading] = useState(true);
+  const [ref, inView, entry] = useInView({ rootMargin: '200px' });
   const [items, setItems] = useState([]);
   const [offset, setOffset] = useState(10);
   const [totalPages, setTotalPages] = useState(null);
@@ -36,7 +38,6 @@ const ChapterFull = props => {
   }, [inView]);
 
   useEffect(() => {
-    setLoading(true);
     Api.getChapter(chapterId).then(({ meta, verses }) => {
       setLoading(false);
       setCurrentPage(meta.current_page);
@@ -46,11 +47,27 @@ const ChapterFull = props => {
     document.title = generateTitle(chapterId);
   }, []);
 
+  if (chapterId > 114) {
+    document.title = 'Не существующая сура - Quran Read';
+    return (
+      <div className="wrap">
+        <Alert
+          title="Вы открыли суру которая не существует!"
+          text={
+            <p>
+              Вернитесь на главную страницу и найдите необходимую суру. Например <RandomSura />
+            </p>
+          }
+        />
+      </div>
+    );
+  }
+
   return (
-    <div className="wrap relative">
+    <div className="wrap">
       <div className={s.title}>{Chapters[chapterId - 1].text.name}</div>
       <Bismillah chapter={chapterId} />
-      {items.map(verse => (
+      {items.map((verse, idx) => (
         <Verse
           key={verse.id}
           verse={verse}
@@ -60,10 +77,10 @@ const ChapterFull = props => {
           setWordAudio={setWordAudio}
           activeAudio={activeAudio}
           setActiveAudio={setActiveAudio}
+          ref={items.length - 1 === idx ? ref : null}
         />
       ))}
       {loading && <div>Загружаю суру..</div>}
-      <div ref={ref} className="loadmore" />
     </div>
   );
 };
