@@ -1,7 +1,7 @@
 export default class ApiServices {
-  _apiBase = 'https://quran.com/api/api/v3';
+  _apiBase = "http://api.quran.com/api/v3/";
 
-  getData = async url => {
+  getData = async (url) => {
     const res = await fetch(`${this._apiBase}${url}`);
 
     if (!res.ok) {
@@ -10,21 +10,27 @@ export default class ApiServices {
     return await res.json();
   };
 
-  getChapter = async id => {
-    const chapter = await this.getData(`/chapters/${id}/verses?translations=45&language=ru`);
+  getChapter = async (id) => {
+    const chapter = await this.getData(
+      `/chapters/${id}/verses?translations=45&language=ru`
+    );
     return chapter;
   };
 
   getVersesRange = async (id, offset, limit) => {
     const chapter = await this.getData(
-      `/chapters/${id}/verses?offset=${offset - 1}&limit=${limit}&translations=45&language=ru`
+      `/chapters/${id}/verses?offset=${
+        offset - 1
+      }&limit=${limit}&translations=45&language=ru`
     );
     return chapter;
   };
 
   getChapterVerse = async (id, offset) => {
     const chapter = await this.getData(
-      `/chapters/${id}/verses?offset=${offset - 1}&limit=1&translations=45&language=ru`
+      `/chapters/${id}/verses?offset=${
+        offset - 1
+      }&limit=1&translations=45&language=ru`
     );
     return chapter;
   };
