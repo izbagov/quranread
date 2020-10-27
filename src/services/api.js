@@ -1,5 +1,5 @@
 export default class ApiServices {
-  _apiBase = "http://api.quran.com/api/v3";
+  _apiBase = "https://api.quran.com/api/v3";
 
   getData = async (url) => {
     const res = await fetch(`${this._apiBase}${url}`);
