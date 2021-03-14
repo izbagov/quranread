@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://quranread.ru/",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "intersection-observer": "^0.7.0",
     "node-sass": "4.13.1",
     "query-string": "^6.14.1",
