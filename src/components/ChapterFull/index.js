@@ -11,37 +11,52 @@ import s from './ChapterFull.module.scss';
 
 const Api = new ApiServices();
 
-const ChapterFull = props => {
+const ChapterFull = (props) => {
   const [loading, setLoading] = useState(true);
   const [ref, inView, entry] = useInView({ rootMargin: '200px' });
   const [items, setItems] = useState([]);
-  const [offset, setOffset] = useState(10);
-  const [totalPages, setTotalPages] = useState(null);
-  const [currentPage, setCurrentPage] = useState(null);
   const [currentAudio, setCurrentAudio] = useState(null);
-  const [wordAudio, setWordAudio] = useState(null);
   const [activeAudio, setActiveAudio] = useState(null);
+
+  const [meta, setMeta] = useState({
+    current_page: null,
+    next_page: null,
+    prev_page: null,
+    total_pages: null,
+    total_count: null,
+    offset: 10,
+  });
 
   const chapterId = props.match.params.id;
 
   useEffect(() => {
-    if (totalPages === currentPage || loading) return;
+    if (items.length >= meta.total_count || loading) return;
     if (inView && entry.boundingClientRect.top > 500) {
       setLoading(true);
-      Api.getChapterWithOffset(chapterId, offset).then(({ meta, verses }) => {
+      Api.getChapterWithOffset(chapterId, meta.offset).then(({ meta: metaInfo, verses }) => {
         setLoading(false);
-        setCurrentPage(meta.current_page);
-        setOffset(offset => offset + 10);
-        setItems(items => [...items, ...verses]);
+        setMeta((prevMeta) => ({
+          ...prevMeta,
+          ...metaInfo,
+          offset: prevMeta.offset + 10,
+        }));
+        setItems((items) => [...items, ...verses]);
       });
     }
   }, [inView]);
 
   useEffect(() => {
-    Api.getChapter(chapterId).then(({ meta, verses }) => {
+    const queryParams = {
+      translations: 45,
+      language: 'ru',
+    };
+    Api.getVerses(chapterId, queryParams).then(({ meta, verses }) => {
       setLoading(false);
-      setCurrentPage(meta.current_page);
-      setTotalPages(meta.total_pages);
+
+      setMeta((prevMeta) => ({
+        ...prevMeta,
+        ...meta,
+      }));
       setItems(verses);
     });
     document.title = generateTitle(chapterId);
@@ -73,8 +88,6 @@ const ChapterFull = props => {
           verse={verse}
           currentAudio={currentAudio}
           setCurrentAudio={setCurrentAudio}
-          wordAudio={wordAudio}
-          setWordAudio={setWordAudio}
           activeAudio={activeAudio}
           setActiveAudio={setActiveAudio}
           ref={items.length - 1 === idx ? ref : null}

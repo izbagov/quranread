@@ -12,7 +12,6 @@ const ShowVerse = ({ match }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [currentAudio, setCurrentAudio] = useState(null);
-  const [wordAudio, setWordAudio] = useState(null);
   const [activeAudio, setActiveAudio] = useState(null);
   const chapterId = match.params.id;
   const verseId = match.params.verse;
@@ -38,14 +37,12 @@ const ShowVerse = ({ match }) => {
   return (
     <div className="wrap">
       {!error && <div className="title">{Chapters[chapterId - 1].text.name}</div>}
-      {verses.map(verse => (
+      {verses.map((verse) => (
         <Verse
           key={verse.id}
           verse={verse}
           currentAudio={currentAudio}
           setCurrentAudio={setCurrentAudio}
-          wordAudio={wordAudio}
-          setWordAudio={setWordAudio}
           activeAudio={activeAudio}
           setActiveAudio={setActiveAudio}
         />

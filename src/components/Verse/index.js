@@ -6,26 +6,20 @@ import { AUDIO_FILE_URL } from '../../constants';
 import { playAudio } from '../../helpers';
 
 const Verse = forwardRef(
-  (
-    {
-      verse,
-      currentAudio,
-      setCurrentAudio,
-      wordAudio,
-      setWordAudio,
-      activeAudio,
-      setActiveAudio,
-      style
-    },
-    ref
-  ) => {
+  ({ verse, currentAudio, setCurrentAudio, activeAudio, setActiveAudio, style }, ref) => {
     const wordPlayAudio = (wordAudio, id) => {
       if (wordAudio) {
-        playAudio(wordAudio, currentAudio, setActiveAudio, setCurrentAudio, id);
+        playAudio(
+          `https://audio.qurancdn.com/${wordAudio}`,
+          currentAudio,
+          setActiveAudio,
+          setCurrentAudio,
+          id,
+        );
       }
     };
 
-    const playVerse = verse => {
+    const playVerse = (verse) => {
       if (verse.verse_key === activeAudio) {
         currentAudio.pause();
         setCurrentAudio(null);
@@ -38,12 +32,12 @@ const Verse = forwardRef(
           currentAudio,
           setActiveAudio,
           setCurrentAudio,
-          verse.verse_key
+          verse.verse_key,
         );
       }
     };
 
-    const verseClasses = word =>
+    const verseClasses = (word) =>
       `${word.class_name} ${word.char_type} ${s.word} ${
         activeAudio === word.id ? s.activeWord : ''
       }`;
@@ -56,7 +50,7 @@ const Verse = forwardRef(
       >
         <div className={s.number}>{verse.verse_number}</div>
         <div className={s.arabic}>
-          {verse.words.map(word => (
+          {verse.words.map((word) => (
             <div
               key={word.id}
               className={verseClasses(word)}
@@ -71,7 +65,7 @@ const Verse = forwardRef(
         </div>
       </div>
     );
-  }
+  },
 );
 
 export default Verse;

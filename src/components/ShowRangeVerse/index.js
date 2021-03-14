@@ -8,17 +8,28 @@ import Alert from '../../UI/Alert';
 import { generateTitle } from '../../helpers';
 import RandomSura from '../RandomSura';
 
+function correctRangeVerses(start, total) {
+  return Number(start) < total;
+}
+
 const ShowRangeVerse = ({ match }) => {
   const [verses, setVerses] = useState([]);
   const [ref, inView] = useInView();
   const [loading, setLoading] = useState(true);
-  const [offset, setOffset] = useState(null);
-  const [totalPages, setTotalPages] = useState(null);
-  const [currentPage, setCurrentPage] = useState(null);
   const [error, setError] = useState(false);
   const [currentAudio, setCurrentAudio] = useState(null);
-  const [wordAudio, setWordAudio] = useState(null);
   const [activeAudio, setActiveAudio] = useState(null);
+
+  const [meta, setMeta] = useState({
+    current_page: null,
+    next_page: null,
+    prev_page: null,
+    total_pages: null,
+    total_count: null,
+    offset: 10,
+    lastVerseNumber: null,
+  });
+
   const Api = new ApiServices();
   const { verseFirst, verseSecond, id } = match.params;
   const limit = verseSecond - verseFirst + 1;
@@ -28,12 +39,14 @@ const ShowRangeVerse = ({ match }) => {
     setLoading(true);
     await Api.getVersesRange(id, verseFirst, limit)
       .then(({ meta, verses }) => {
-        if (verses.length) {
+        if (correctRangeVerses(verseFirst, meta.total_count)) {
           setVerses(verses);
-          const versesLength = verses.length - 1;
-          setOffset(+verseFirst + versesLength);
-          setCurrentPage(meta.current_page);
-          setTotalPages(meta.total_pages);
+
+          setMeta((prevMeta) => ({
+            ...prevMeta,
+            ...meta,
+            offset: Number(verseSecond) + prevMeta.offset,
+          }));
         } else {
           setError(true);
         }
@@ -42,13 +55,17 @@ const ShowRangeVerse = ({ match }) => {
   };
 
   useEffect(() => {
-    if (totalPages === currentPage || loading) return;
+    if (meta.lastVerseNumber >= meta.total_count || loading) return;
     if (inView) {
       setLoading(true);
-      Api.getChapterWithOffset(id, offset).then(({ meta, verses }) => {
-        setCurrentPage(meta.current_page);
-        setOffset(offset => offset + 10);
-        setVerses(prevVerses => [...prevVerses, ...verses]);
+      Api.getChapterWithOffset(id, meta.offset).then(({ meta, verses }) => {
+        setMeta((prevMeta) => ({
+          ...prevMeta,
+          ...meta,
+          offset: prevMeta.offset + 10,
+          lastVerseNumber: verses[verses.length - 1].verse_number,
+        }));
+        setVerses((prevVerses) => [...prevVerses, ...verses]);
         setLoading(false);
       });
     }
@@ -71,8 +88,6 @@ const ShowRangeVerse = ({ match }) => {
           verse={verse}
           currentAudio={currentAudio}
           setCurrentAudio={setCurrentAudio}
-          wordAudio={wordAudio}
-          setWordAudio={setWordAudio}
           activeAudio={activeAudio}
           setActiveAudio={setActiveAudio}
           ref={verses.length - 1 === idx ? ref : null}
