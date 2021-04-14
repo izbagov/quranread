@@ -8,9 +8,10 @@ import { playAudio } from '../../helpers';
 const Verse = forwardRef(
   ({ verse, currentAudio, setCurrentAudio, activeAudio, setActiveAudio, style }, ref) => {
     const wordPlayAudio = (wordAudio, id) => {
+      const url = wordAudio.split('/')[1];
       if (wordAudio) {
         playAudio(
-          `https://audio.qurancdn.com/${wordAudio}`,
+          `https://words.audios.quranwbw.com/${verse.chapter_id}/${url}`,
           currentAudio,
           setActiveAudio,
           setCurrentAudio,
