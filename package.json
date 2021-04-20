@@ -37,6 +37,6 @@
     "react-snap": "^1.23.0"
   },
   "engines": {
-    "node": "10.x"
+    "node": "14.x"
   }
 }
