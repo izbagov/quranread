@@ -50,12 +50,12 @@ const ChapterFull = (props) => {
       translations: 45,
       language: 'ru',
     };
-    Api.getVerses(chapterId, queryParams).then(({ meta, verses }) => {
+    Api.getVerses(chapterId, queryParams).then(({ pagination, verses }) => {
       setLoading(false);
 
       setMeta((prevMeta) => ({
         ...prevMeta,
-        ...meta,
+        ...pagination,
       }));
       setItems(verses);
     });
