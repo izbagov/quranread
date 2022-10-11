@@ -11,6 +11,7 @@ const Footer = () => (
       <div className={s.nav}>
         <Link to="/credits">Благодарность</Link>
         <Link to="/contacts">Обратная связь</Link>
+        <Link to="/links">Полезные ссылки</Link>
       </div>
     </div>
   </footer>

@@ -4,6 +4,7 @@ import Home from './components/Home';
 import ChapterFull from './components/ChapterFull';
 import Contacts from './components/Contacts';
 import Credits from './components/Credits';
+import Friends from './components/Friends';
 import ShowVerse from './components/ShowVerse';
 import ShowRangeVerse from './components/ShowRangeVerse';
 import NoMatch from './components/NoMatch';
@@ -27,6 +28,7 @@ const App = () => {
           />
           <Route exact path="/contacts" component={Contacts} />
           <Route exact path="/credits" component={Credits} />
+          <Route exact path="/links" component={Friends} />
           <Route exact path="*" component={NoMatch} />
         </Switch>
         <Footer />
